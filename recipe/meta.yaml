@@ -9,7 +9,6 @@ source:
   url: https://github.com/microsoft/mimalloc/archive/v{{ version }}.tar.gz
   sha256: a4bf4e1e0764230e8abbcec88e2ffaf170804fdfcda15e6a17f63f7088d8e692
   patches:
-    - 0001-patch-aligned_malloc.patch
     - 0002-fix-install-path.patch
 
 build:
