@@ -6,10 +6,10 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/microsoft/mimalloc/archive/v{{ version }}.tar.gz
-  sha256: a25c096dbd100b5f872bf458c080ebe539dbb8275c76e44e1f02b07341e6ca04
-  patches:
-    - 0001-Add-option-to-install-directly-in-CMAKE_INSTALL_PREF.patch
+  # url: https://github.com/elbaro/mimalloc/archive/v{{ version }}.tar.gz
+  url: https://github.com/elbaro/mimalloc/archive/refs/heads/fix/aligned-alloc.zip
+  # sha256: a25c096dbd100b5f872bf458c080ebe539dbb8275c76e44e1f02b07341e6ca04
+  sha256: 19aa831b511a0e1b670c5de9cec8513cb4be7e66db2f043891328b698aebefeb
 
 build:
   number: 0
