@@ -8,8 +8,6 @@ package:
 source:
   url: https://github.com/microsoft/mimalloc/archive/v{{ version }}.tar.gz
   sha256: c81a5f443f72373e3105172d6a935e29b0dabd13ba387c080bc444586cbe3021
-  patches:
-    - 0001-Add-option-to-install-directly-in-CMAKE_INSTALL_PREF.patch
 
 build:
   number: 0
