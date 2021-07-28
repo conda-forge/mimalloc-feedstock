@@ -36,9 +36,10 @@ test:
   commands:
     - test -f $PREFIX/lib/libmimalloc${SHLIB_EXT}  # [unix]
     - test -f $PREFIX/include/mimalloc.h           # [unix]
-    - if not exist %LIBRARY_PREFIX%\\bin\\mimalloc.dll exit 1    # [win]
+    - if not exist %LIBRARY_PREFIX%\\lib\\mimalloc.dll exit 1    # [win]
     - if not exist %LIBRARY_PREFIX%\\lib\\mimalloc.lib exit 1    # [win]
     - if not exist %LIBRARY_PREFIX%\\include\\mimalloc.h exit 1  # [win]
+    - if not exist %LIBRARY_PREFIX%\\cmake\\mimalloc.h exit 1  # [win]
 
 about:
   home: https://github.com/microsoft/mimalloc
