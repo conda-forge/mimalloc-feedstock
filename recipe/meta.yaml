@@ -39,7 +39,6 @@ test:
     - if not exist %LIBRARY_PREFIX%\\lib\\mimalloc.dll exit 1    # [win]
     - if not exist %LIBRARY_PREFIX%\\lib\\mimalloc.lib exit 1    # [win]
     - if not exist %LIBRARY_PREFIX%\\include\\mimalloc.h exit 1  # [win]
-    - if not exist %LIBRARY_PREFIX%\\cmake\\mimalloc.h exit 1  # [win]
 
 about:
   home: https://github.com/microsoft/mimalloc
