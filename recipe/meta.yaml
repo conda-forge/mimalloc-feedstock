@@ -22,7 +22,7 @@ requirements:
     - cmake
     - ninja
   run:
-    - sysroot_linux-64 # [linux]
+    - sysroot_linux-64  # [linux]
 
 # .
 # ├── include
