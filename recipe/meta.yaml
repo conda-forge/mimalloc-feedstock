@@ -33,6 +33,10 @@ requirements:
 #    └── mimalloc.o
 
 test:
+  requires:
+    - {{ compiler('c') }}
+  files:
+    - test.c
   commands:
     - test -f $PREFIX/lib/libmimalloc${SHLIB_EXT}  # [unix]
     - test -f $PREFIX/include/mimalloc.h           # [unix]
@@ -40,6 +44,8 @@ test:
     - if not exist %LIBRARY_PREFIX%\\lib\\mimalloc.dll exit 1    # [win]
     - if not exist %LIBRARY_PREFIX%\\lib\\mimalloc.lib exit 1    # [win]
     - if not exist %LIBRARY_PREFIX%\\include\\mimalloc.h exit 1  # [win]
+    - $CC -L$PREFIX/lib -lmimalloc -I$PREFIX/include test.c -o test  # [unix]
+    - LD_LIBRARY_PATH=$PREFIX/lib ./test  # [unix]
 
 about:
   home: https://github.com/microsoft/mimalloc
