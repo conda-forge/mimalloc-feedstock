@@ -205,5 +205,6 @@ Feedstock Maintainers
 =====================
 
 * [@elbaro](https://github.com/elbaro/)
+* [@jjerphan](https://github.com/jjerphan/)
 * [@xhochy](https://github.com/xhochy/)
 

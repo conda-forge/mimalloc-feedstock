@@ -15,6 +15,8 @@ cmake ^
     -DMI_BUILD_SHARED=ON  ^
     -DMI_BUILD_STATIC=OFF ^
     -DMI_BUILD_OBJECT=OFF ^
+    -DMI_OVERRIDE=OFF ^
+    -DMI_LOCAL_DYNAMIC_TLS=ON ^
     ..\..
 if errorlevel 1 exit 1
 ninja
