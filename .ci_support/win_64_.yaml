@@ -9,6 +9,6 @@ channel_targets:
 cxx_compiler:
 - vs2019
 mimalloc:
-- 2.1.7
+- 3.0.1
 target_platform:
 - win-64
