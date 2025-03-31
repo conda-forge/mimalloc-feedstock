@@ -8,8 +8,6 @@ package:
 source:
   - url: https://github.com/microsoft/mimalloc/archive/v{{ version }}.tar.gz
     sha256: baf343041420e2924e1760bbbc0c111101c44e1cecb998e7951f646a957ee05f
-    patches:
-      - patches/0001-cmake-Remove-non-portable-mtune-specification.patch
   - url: https://github.com/microsoft/mimalloc/raw/v{{ version }}/bin/mimalloc-redirect.lib  # [win]
     sha256: 39ef7147f6d563a48b019db2f197ae34487bd3daa1b91a369ce7ba32179f7cb6  # [win]
     folder: bin  # [win]
