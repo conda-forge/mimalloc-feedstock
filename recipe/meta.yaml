@@ -1,5 +1,5 @@
 {% set name = "mimalloc" %}
-{% set version = "3.0.1" %}
+{% set version = "3.1.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   - url: https://github.com/microsoft/mimalloc/archive/v{{ version }}.tar.gz
-    sha256: 6a514ae31254b43e06e2a89fe1cbc9c447fdbf26edc6f794f3eb722f36e28261
+    sha256: 84992bca18d6f74829b884c369de2707085b8248aaf3a1368e21f3993020171f
     patches:
-    - patches/0001-cmake-Remove-non-portable-mtune-specification.patch
+      - patches/0001-cmake-Remove-non-portable-mtune-specification.patch
   - url: https://github.com/microsoft/mimalloc/raw/v{{ version }}/bin/mimalloc-redirect.lib  # [win]
-    sha256: c344a5b6a2690013e4bc0290c7d5c37d4241e6e98fbfbfadf70e70fb08438ede  # [win]
+    sha256: 39ef7147f6d563a48b019db2f197ae34487bd3daa1b91a369ce7ba32179f7cb6  # [win]
     folder: bin  # [win]
   - url: https://github.com/microsoft/mimalloc/raw/v{{ version }}/bin/mimalloc-redirect.dll  # [win]
-    sha256: 30c557c2e5ba0ee0a88893610a0500a2e2891978b2cbdc222d97098a5db392ba  # [win]
+    sha256: bc3dfdf51fbc80b88cb62cdb6a6784ecc894164bdd4ae7f3885048d870809491  # [win]
     folder: bin  # [win]
 
 build:
