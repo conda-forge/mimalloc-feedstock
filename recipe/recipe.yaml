@@ -51,7 +51,7 @@ tests:
       - if: win
         then: if not exist %LIBRARY_PREFIX%\\bin\\mimalloc.dll exit 1
       - if: win
-        then: if not exist %LIBRARY_PREFIX%\\lib\\mimalloc.lib exit 1
+        then: if not exist %LIBRARY_PREFIX%\\lib\\mimalloc.dll.lib exit 1
       - if: win
         then: if not exist %LIBRARY_PREFIX%\\include\\mimalloc.h exit 1
       - if: unix

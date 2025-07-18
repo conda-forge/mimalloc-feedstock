@@ -2,8 +2,6 @@
 
 dir %SRC_DIR%\bin
 
-set 
-
 md out\release
 if errorlevel 1 exit 1
 cd out\release
