@@ -13,6 +13,10 @@ source:
     sha256: bd5756fb2e9f5c275b37ce1d530ac1c98baca0bad6818dcda5c83d6139108a97
     patches:
       - patches/0001-cmake-Remove-non-portable-mtune-specification.patch
+      - if: win
+        then:
+          - patches/0002-cmake-Suppress-int-conversion-warnings-on-Windows.patch
+          - patches/0003-alloc-Define-_mi_theap_malloc_zero-as-extern-inline.patch
   - if: win
     then:
       - url: https://github.com/microsoft/mimalloc/raw/v${{ version }}/bin/mimalloc-redirect.lib
