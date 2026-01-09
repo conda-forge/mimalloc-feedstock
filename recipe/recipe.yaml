@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: mimalloc
-  version: 3.1.5
+  version: "3.2.6"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   - url: https://github.com/microsoft/mimalloc/archive/v${{ version }}.tar.gz
-    sha256: 1c6949032069d5ebea438ec5cedd602d06f40a92ddf0f0d9dcff0993e5f6635c
+    sha256: bd5756fb2e9f5c275b37ce1d530ac1c98baca0bad6818dcda5c83d6139108a97
     patches:
       - patches/0001-cmake-Remove-non-portable-mtune-specification.patch
   - if: win
@@ -45,20 +45,18 @@ tests:
         - ${{ compiler('cxx') }}
     script:
       - if: unix
-        then: test -f $PREFIX/lib/libmimalloc${SHLIB_EXT}
-      - if: unix
-        then: test -f $PREFIX/include/mimalloc.h
+        then:
+          - test -f $PREFIX/lib/libmimalloc${SHLIB_EXT}
+          - test -f $PREFIX/include/mimalloc.h
       - if: win
-        then: if not exist %LIBRARY_PREFIX%\\bin\\mimalloc.dll exit 1
-      - if: win
-        then: if not exist %LIBRARY_PREFIX%\\lib\\mimalloc.dll.lib exit 1
-      - if: win
-        then: if not exist %LIBRARY_PREFIX%\\include\\mimalloc.h exit 1
+        then:
+          - if not exist %LIBRARY_PREFIX%\\bin\\mimalloc.dll exit 1
+          - if not exist %LIBRARY_PREFIX%\\lib\\mimalloc.dll.lib exit 1
+          - if not exist %LIBRARY_PREFIX%\\include\\mimalloc.h exit 1
       - if: unix
-        then: $CC $CFLAGS $LDFLAGS test.c -lmimalloc -o test
-      - if: unix
-        then: LD_LIBRARY_PATH=$PREFIX/lib ./test
-
+        then:
+          - $CC $CFLAGS $LDFLAGS test.c -lmimalloc -o test
+          - LD_LIBRARY_PATH=$PREFIX/lib ./test
 about:
   license: MIT
   license_file: LICENSE
