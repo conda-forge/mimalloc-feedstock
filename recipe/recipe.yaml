@@ -27,7 +27,7 @@ source:
         target_directory: bin
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -37,7 +37,7 @@ requirements:
     - cmake
     - ninja
   run_exports:
-    - ${{ pin_subpackage("mimalloc", upper_bound="x.x.x") }}
+    - ${{ pin_subpackage("mimalloc", upper_bound="x.x") }}
 
 tests:
   - files:
