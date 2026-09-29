@@ -12,11 +12,11 @@ Signed-off-by: Julien Jerphanion <git@jjerphan.xyz>
  1 file changed, 4 insertions(+)
 
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 05b97fc9..4c19ad22 100644
+index a4a260a..0d78a47 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -424,6 +424,10 @@ if(CMAKE_C_COMPILER_ID MATCHES "AppleClang|Clang|GNU" AND NOT MI_CLANG_CL)
-   endif()
+@@ -290,6 +290,11 @@ if(CMAKE_C_COMPILER_ID MATCHES "Intel")
+     list(APPEND mi_cflags -Wall)
  endif()
  
 +# Suppress int-conversion and incompatible-pointer-types warnings on Windows with Clang
@@ -24,8 +24,8 @@ index 05b97fc9..4c19ad22 100644
 +  list(APPEND mi_cflags -Wno-int-conversion -Wno-incompatible-pointer-types)
 +endif()
 +
- if(CMAKE_C_COMPILER_ID MATCHES "Intel")
-   list(APPEND mi_cflags -fvisibility=hidden)
+ if(CMAKE_CXX_COMPILER_ID MATCHES "AppleClang|Clang")
+   list(APPEND mi_cflags -Wno-deprecated)
  endif()
 -- 
 2.47.1

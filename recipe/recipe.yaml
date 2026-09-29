@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: mimalloc
-  version: "3.4.4"
+  version: "3.5.3"
 
 package:
   name: ${{ name|lower }}
@@ -10,13 +10,11 @@ package:
 
 source:
   - url: https://github.com/microsoft/mimalloc/archive/v${{ version }}.tar.gz
-    sha256: 8ba991a7266983bd5eefc36e140c24734f720fd9b1fd79ddaeff44ea85d16760
+    sha256: 3b4a15153a59905995f7070296ed604bb5ccc00cabb8b93446931aff77224d47
     patches:
-      - patches/0001-cmake-Remove-non-portable-mtune-specification.patch
       - if: win
         then:
           - patches/0002-cmake-Suppress-int-conversion-warnings-on-Windows.patch
-          - patches/0003-alloc-Define-_mi_theap_malloc_zero-as-extern-inline.patch
   - if: win
     then:
       - url: https://github.com/microsoft/mimalloc/raw/v${{ version }}/bin/mimalloc-redirect.lib
