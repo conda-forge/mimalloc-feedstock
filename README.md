@@ -221,5 +221,6 @@ Feedstock Maintainers
 
 * [@elbaro](https://github.com/elbaro/)
 * [@jjerphan](https://github.com/jjerphan/)
+* [@timkpaine](https://github.com/timkpaine/)
 * [@xhochy](https://github.com/xhochy/)
 
