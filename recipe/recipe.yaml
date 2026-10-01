@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: mimalloc
-  version: "3.4.4"
+  version: "3.5.4"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   - url: https://github.com/microsoft/mimalloc/archive/v${{ version }}.tar.gz
-    sha256: 8ba991a7266983bd5eefc36e140c24734f720fd9b1fd79ddaeff44ea85d16760
+    sha256: 36e9b5bf1bb703567a0347491721ce2098000db8284dc55cd53d211452723cdb
     patches:
       - patches/0001-cmake-Remove-non-portable-mtune-specification.patch
       - if: win
