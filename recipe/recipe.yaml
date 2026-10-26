@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: mimalloc
-  version: "3.5.4"
+  version: "3.6.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   - url: https://github.com/microsoft/mimalloc/archive/v${{ version }}.tar.gz
-    sha256: 36e9b5bf1bb703567a0347491721ce2098000db8284dc55cd53d211452723cdb
+    sha256: c663101ba193b5b823c8541c1b719ab67e3ebf9976e425a02359a5cad5e52990
     patches:
       - if: win
         then:
@@ -25,7 +25,7 @@ source:
         target_directory: bin
 
 build:
-  number: 1
+  number: 0
 
 requirements:
   build:
