@@ -12,6 +12,8 @@ source:
   - url: https://github.com/microsoft/mimalloc/archive/v${{ version }}.tar.gz
     sha256: 8bc9f820eaf3dad3509d7930d80c40512bc51e04989641f892ee64c46b7ab0d8
     patches:
+      # Detect byte order without running target binaries during cross-compilation.
+      - patches/cross-compile-endianness.patch
       - if: win
         then:
           - patches/0002-cmake-Suppress-int-conversion-warnings-on-Windows.patch
