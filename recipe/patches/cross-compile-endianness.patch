@@ -1,0 +1,23 @@
+Use CMake's compile-only endianness detection for cross-compilation.
+
+--- a/cmake/util.cmake
++++ b/cmake/util.cmake
+@@ -2,7 +2,7 @@
+ # Utility functions for CMakeLists.txt
+ # ----------------------------------------------------------------------------
+ include(CheckCCompilerFlag)
+-include(CheckCSourceRuns)
++include(TestBigEndian)
+ include(CheckCSourceCompiles)
+ include(CheckIncludeFiles)
+ include(CheckSymbolExists)
+@@ -59,7 +59,8 @@
+ endfunction()
+ 
+ function(check_big_endian outvar)
+-  check_c_source_runs("int main(void) { const unsigned int n = 1; return *(const unsigned char*)&n; }" ${outvar})
++  test_big_endian(${outvar})
++  set(${outvar} ${${outvar}} PARENT_SCOPE)
+ endfunction()
+ 
+ # determine if `libatomic` is needed for 64-bit and pointer-sized atomics (on some 32-bit platforms);
